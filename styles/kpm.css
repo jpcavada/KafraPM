@@ -1,0 +1,137 @@
+
+
+body {
+    margin: 0 auto;
+    max-width: 1350px;
+    padding-bottom: 50px;
+    padding-top: 10px;
+  }
+  
+  
+  *, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+  }
+body {
+    font-family: Georgia, Helvetica;
+    font-size: 17px;
+    background-color: black;
+
+  }
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.tagline{
+    text-align: center;
+    background-color: darkmagenta;
+    color: white;
+    font-size: 120%;
+    height: 20px;
+}
+
+.manager{
+    display: flex;
+    flex-direction: column;
+    border: 0px;
+    padding: 2px 10px;
+}
+
+.asistencia {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 98%;
+    min-height: 10px;
+    margin: 3px;
+    background-color: black;
+    border-bottom: thick solid chocolate;
+    border-top: thick solid chocolate;
+    padding: 10px 10px;
+
+}
+
+.party-area {
+    width: 100%;
+    margin: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+}
+
+.party-box {
+    margin: 1%;
+    width: 18%
+}
+.party-head {
+    color: chocolate;
+    border-bottom: 2px solid chocolate;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 2px;
+    margin-bottom: 2px;
+
+}
+.party {
+    min-height: 25px;
+    max-height:270px;
+    padding-top: 3px;
+}
+.party > div {
+    width: 100%
+}
+.party > .pj:first-of-type {
+    border:4px outset goldenrod !important;
+}
+.party > .pj:nth-child(n+7) {
+    background-color:darkred;
+}
+.pj {
+    color: white;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    width: 130px;
+    max-height: 62px;
+
+}  
+.pj:hover{
+    background-color: gray;
+}
+.pj-name {
+    text-align: left;
+    padding: 5px;
+    height: 15px;
+}
+
+.job-image {
+    grid-row: 1 / 3;
+    height: 35px;
+    text-align: center;
+}
+.job-name {
+    font-size: 10px;
+    font-style: italic;
+    font-weight: bold ;
+    text-align: right;
+    padding-right: 1px,;
+    text-shadow: 2px 2px 4px #000000;
+    height: 11px;
+}
+
+.bottom-section{
+    border-top: 1px solid goldenrod;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: darkgoldenrod;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 25px;
+    padding: 10px;
+}
+#statistics {
+    display: initial;
+}
