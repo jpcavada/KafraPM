@@ -132,13 +132,13 @@ function narmoLaLleva() {
     var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1dI1YwANc2tdgW0JgyXECB55JnZ-4bAuhdLPXNlV5NUk/edit#gid=31056058';
     $('#as_cont').sheetrock({
         url: mySpreadsheet,
-        query: "select A,B,C,D where D = 'Si' order by C",
+        query: "select B,C,count(B),count(C) where D = 'Si' group by B,C order by C",
         callback: (error, options = {}, response = {}) => {
             if (!!error) {
               console.log('error', error);
               return;
             }
-            /*const { attributes, raw, rows, html } = response || {};
+            const { attributes, raw, rows, html } = response || {};
             console.log('tu mama', response);
             
             const PJArray = rows.map((row, index) => {
@@ -151,15 +151,15 @@ function narmoLaLleva() {
 
             console.log('PJArray', PJArray);
             response.html='';
-            */
+            
         },
         rowTemplate: (row) => {
             const { cellsArray, labels} = row;
 
             let fontSize = 90;
 
-            const name = cellsArray[1];
-            const job = cellsArray[2];
+            const name = cellsArray[0];
+            const job = cellsArray[1];
             if (name.length > 10) {
                 fontSize = 80;
             }
