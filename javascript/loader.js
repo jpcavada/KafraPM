@@ -163,6 +163,9 @@ function narmoLaLleva() {
             if (name.length > 10) {
                 fontSize = 80;
             }
+            if (name.length > 20) {
+                fontSize = 40;
+            }
             const { imgUrl, bg_color = 'black' } = imgAndColor(job);
 
             return  `<div class="pj"><div class="job-image"><img src="${imgUrl}" width="35" height="35"></div><div class="pj-name" style="font-size:${fontSize}%">${name}</div><div class="job-name" style="background: ${bg_color} none repeat scroll 0% 0%;">${job}</div></div>`;
@@ -186,6 +189,30 @@ var drake = dragula({
   drake.containers.push(document.getElementById('pt11-integrantes'));
   drake.containers.push(document.getElementById('pt12-integrantes'));
 
+
+var drake2 = dragula({
+    copy: function (el, source) {
+        console.log=source;
+        return source.id == 'roles';
+      },
+    accepts: function(el, target, source, sibling) {
+        return target.id != 'roles'; 
+    },
+    removeOnSpill: true
+});
+drake2.containers.push(document.getElementById('roles'));
+drake2.containers.push(document.getElementById('pt1-role'));
+drake2.containers.push(document.getElementById('pt2-role'));
+drake2.containers.push(document.getElementById('pt3-role'));
+drake2.containers.push(document.getElementById('pt4-role'));
+drake2.containers.push(document.getElementById('pt5-role'));
+drake2.containers.push(document.getElementById('pt6-role'));
+drake2.containers.push(document.getElementById('pt7-role'));
+drake2.containers.push(document.getElementById('pt8-role'));
+drake2.containers.push(document.getElementById('pt9-role'));
+drake2.containers.push(document.getElementById('pt10-role'));
+drake2.containers.push(document.getElementById('pt11-role'));
+drake2.containers.push(document.getElementById('pt12-role'));
 
 
 function init() {

@@ -20,7 +20,8 @@ body {
 
   }
 .logo {
-    display: block;
+    display: flex;
+    justify-content: space-around;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
@@ -39,7 +40,12 @@ body {
     border: 0px;
     padding: 2px 10px;
 }
-
+.role-selector {
+    display :flex;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
+}
 .asistencia {
     display: flex;
     flex-wrap: wrap;
@@ -69,12 +75,22 @@ body {
 .party-head {
     color: chocolate;
     border-bottom: 2px solid chocolate;
-    font-size: 20px;
+    font-size: 23px;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-bottom: 2px;
     margin-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
 
+}
+.party-role {
+    min-width: 75px;
+    min-height: 35px;
+    max-height: 35px;
+    margin-top: -7px; 
+    display: flex;
+    justify-content: flex-end;
 }
 .party {
     min-height: 25px;
