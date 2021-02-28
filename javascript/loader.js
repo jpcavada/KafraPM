@@ -85,6 +85,16 @@ function imgAndColor(job) {
                 imgUrl:'https://imgur.com/cSxH85f.png',
                 bg_color:'purple',
             };
+        case 'Amaterasu-Yamata':
+            return {
+                imgUrl:'https://imgur.com/YmSirBr.png',
+                bg_color: 'rgb(255, 102, 255)',
+            };
+        case 'Slayer':
+            return {
+                imgUrl:'https://imgur.com/gW2z1bi.png',
+                bg_color: 'rgb(204, 0, 102)',
+            };            
         default:
             return {
                 imgUrl: 'https://www.romcodex.com/icons/skill/skill_10020001.png',
@@ -128,11 +138,23 @@ function imgAndColor(job) {
 }
 */
 function narmoLaLleva() {
+    var woe_date = new Date();
+    console.log(woe_date.toISOString());
+    woe_date.setDate( woe_date.getDate() + 1);
+    woe_date.setHours(23);
+    var start_date = new Date(woe_date);
+    start_date.setDate( start_date.getDate() - 2);
+    
+    string_woe_date = woe_date.getFullYear() +'-' + (woe_date.getMonth()+1) + "-" + woe_date.getDate();
+    string_start_date = start_date.getFullYear() +'-' + (start_date.getMonth()+1) + "-" + start_date.getDate();
+
+    
     //var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1k1Fq3VNummYScVxnanThJSimk7YnFwaClh7Kg6cAagE/edit#gid=0';
     var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1dI1YwANc2tdgW0JgyXECB55JnZ-4bAuhdLPXNlV5NUk/edit#gid=31056058';
+    //var date = "'2020-02-07'";
     $('#as_cont').sheetrock({
         url: mySpreadsheet,
-        query: "select B,C,count(B),count(C) where D = 'Si' group by B,C order by C",
+        query: "select B,C,count(B),count(C) where D = 'Si' and date'" + string_woe_date +"' >= A and A >= date'"+string_start_date+ "' group by B,C order by C",
         callback: (error, options = {}, response = {}) => {
             if (!!error) {
               console.log('error', error);
@@ -151,7 +173,6 @@ function narmoLaLleva() {
 
             console.log('PJArray', PJArray);
             response.html='';
-            
         },
         rowTemplate: (row) => {
             const { cellsArray, labels} = row;
@@ -216,7 +237,9 @@ drake2.containers.push(document.getElementById('pt12-role'));
 
 
 function init() {
-
+    let today = new Date().toISOString().slice(0, 10);
+    document.getElementById('fecha').innerText = today;
+    console.log(today);
     narmoLaLleva();
 }
 

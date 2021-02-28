@@ -19,7 +19,16 @@ body {
     background-color: black;
 
   }
-.logo {
+.bar{
+    display: flex;
+    margin: 5px;
+    color: goldenrod;
+}
+#boton-cargar{
+    margin-left: 5px;
+
+}
+  .logo {
     display: flex;
     justify-content: space-around;
     margin-left: auto;
