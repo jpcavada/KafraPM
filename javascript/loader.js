@@ -5,7 +5,7 @@ function imgAndColor(job) {
                 imgUrl:'https://imgur.com/xKqcg3K.png',
                 bg_color:'blue',
             };
-        case 'Beggeter':
+        case 'Begetter':
             return {
                 imgUrl:'https://imgur.com/KgjJpCb.png',
                 bg_color:'orange',
