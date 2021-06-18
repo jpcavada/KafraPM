@@ -13,12 +13,12 @@ function imgAndColor(job) {
         case 'Chronomancer':
             return {
                 imgUrl:'https://imgur.com/Yw3KJWg.png',
-                bg_color:'blue',
+                bg_color:'darkblue',
             };
         case 'Divine Avenger':
             return {
                 imgUrl:'https://imgur.com/FsEj1eV.png',
-                bg_color:'crimson',
+                bg_color:'darkred',
             };
         case 'Dragon Fist':
             return {
@@ -68,12 +68,12 @@ function imgAndColor(job) {
         case 'Spirit Summoner':
             return {
                 imgUrl:'https://imgur.com/HuNtfO7.png',
-                bg_color:'yellow',
+                bg_color: 'greenyellow',
             };
         case 'Stellar Hunter':
             return {
                 imgUrl:'https://imgur.com/pCXZNwq.png',
-                bg_color:'gold',
+                bg_color:'khaki',
             };
         case 'Novice Guardian':
             return {
@@ -154,7 +154,8 @@ function narmoLaLleva() {
     //var date = "'2020-02-07'";
     $('#as_cont').sheetrock({
         url: mySpreadsheet,
-        query: "select B,C,count(B),count(C) where D = 'Si' and date'" + string_woe_date +"' >= A and A >= date'"+string_start_date+ "' group by B,C order by C",
+        //query: "select B,C,count(B),count(C) where D = 'Si' and date'" + string_woe_date +"' >= A and A >= date'"+string_start_date+ "' group by B,C order by C",
+        query: "select B,C,E where D = 'Si' and date'" + string_woe_date +"' >= A and A >= date'"+string_start_date+ "' order by C",
         callback: (error, options = {}, response = {}) => {
             if (!!error) {
               console.log('error', error);
@@ -181,13 +182,21 @@ function narmoLaLleva() {
 
             const name = cellsArray[0];
             const job = cellsArray[1];
+            const gvg = cellsArray[2];
+
             if (name.length > 10) {
                 fontSize = 80;
             }
             if (name.length > 20) {
                 fontSize = 40;
             }
-            const { imgUrl, bg_color = 'black' } = imgAndColor(job);
+
+            let { imgUrl, bg_color = 'white' } = imgAndColor(job);
+            
+            if (gvg.localeCompare("No") == 0){
+                return  `<div class="pj"><div class="job-image"><img src="${imgUrl}" width="35" height="35"></div><div class="pj-name" style="font-size:${fontSize}%">${name}</div><div class="job-name-2" style="background-color: ${bg_color};">${job}</div></div>`;
+            }
+            
 
             return  `<div class="pj"><div class="job-image"><img src="${imgUrl}" width="35" height="35"></div><div class="pj-name" style="font-size:${fontSize}%">${name}</div><div class="job-name" style="background: ${bg_color} none repeat scroll 0% 0%;">${job}</div></div>`;
         }
