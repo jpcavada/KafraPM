@@ -139,6 +139,7 @@ function imgAndColor(job) {
 */
 function narmoLaLleva() {
     var woe_date = new Date();
+    const  inscritos_name = new Set()//lista para eliminar los duplicados
     console.log(woe_date.toISOString());
     woe_date.setDate( woe_date.getDate() + 1);
     woe_date.setHours(23);
@@ -168,8 +169,6 @@ function narmoLaLleva() {
                 const { cellsArray, labels} = row;
                 if (index === 0) { return 0;}
 
-                //const pj = addpj(cellsArray[1], cellsArray[2]);
-                //return pj;
             })
 
             console.log('PJArray', PJArray);
@@ -184,25 +183,34 @@ function narmoLaLleva() {
             const job = cellsArray[1];
             const gvg = cellsArray[2];
 
-            if (name.length > 10) {
-                fontSize = 80;
-            }
-            if (name.length > 20) {
-                fontSize = 40;
-            }
+            normal_name = noTilde(name.toLowerCase())
+            console.log(normal_name)
+            if (!inscritos_name.has(normal_name)){
+             
+                inscritos_name.add(normal_name)
 
-            let { imgUrl, bg_color = 'white' } = imgAndColor(job);
-            
-            if (gvg.localeCompare("No") == 0){
-                return  `<div class="pj"><div class="job-image"><img src="${imgUrl}" width="35" height="35"></div><div class="pj-name" style="font-size:${fontSize}%">${name}</div><div class="job-name-2" style="background-color: ${bg_color};">${job}</div></div>`;
-            }
-            
+                if (name.length > 10) {
+                    fontSize = 80;
+                }
+                if (name.length > 20) {
+                    fontSize = 40;
+                }
 
-            return  `<div class="pj"><div class="job-image"><img src="${imgUrl}" width="35" height="35"></div><div class="pj-name" style="font-size:${fontSize}%">${name}</div><div class="job-name" style="background: ${bg_color} none repeat scroll 0% 0%;">${job}</div></div>`;
+                let { imgUrl, bg_color = 'white' } = imgAndColor(job);
+                
+                if (gvg.localeCompare("No") == 0){
+                    return  `<div class="pj"><div class="job-image"><img src="${imgUrl}" width="35" height="35"></div><div class="pj-name" style="font-size:${fontSize}%">${name}</div><div class="job-name-2" style="background-color: ${bg_color};">${job}</div></div>`;
+                }
+                else {
+                    return  `<div class="pj"><div class="job-image"><img src="${imgUrl}" width="35" height="35"></div><div class="pj-name" style="font-size:${fontSize}%">${name}</div><div class="job-name" style="background: ${bg_color} none repeat scroll 0% 0%;">${job}</div></div>`;
+                }  
+            }
+            return ''
         }
       }
     );
 }
+
 var drake = dragula({
   });
   drake.containers.push(document.getElementById('as_cont'));
@@ -248,8 +256,14 @@ drake2.containers.push(document.getElementById('pt12-role'));
 function init() {
     let today = new Date().toISOString().slice(0, 10);
     document.getElementById('fecha').innerText = today;
-    console.log(today);
     narmoLaLleva();
+}
+
+function noTilde (s) {
+    if (s.normalize != undefined) {
+        s = s.normalize ("NFKD");
+    }
+    return s.replace (/[\u0300-\u036F]/g, "");
 }
 
 init();
