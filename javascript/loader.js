@@ -226,8 +226,10 @@ var drake = dragula({
   drake.containers.push(document.getElementById('pt10-integrantes'));
   drake.containers.push(document.getElementById('pt11-integrantes'));
   drake.containers.push(document.getElementById('pt12-integrantes'));
-
-
+  drake.containers.push(document.getElementById('pt13-integrantes'));
+  drake.containers.push(document.getElementById('pt14-integrantes'));
+  drake.containers.push(document.getElementById('pt15-integrantes'));
+  
 var drake2 = dragula({
     copy: function (el, source) {
         console.log=source;
