@@ -77,7 +77,7 @@ function imgAndColor(job) {
             };
         case 'Novice Guardian':
             return {
-                imgUrl:'https://imgur.com/oUyA33t.png',
+                imgUrl:'https://www.romcodex.com/icons/career/icon_14_5.png',
                 bg_color:'lightblue',
             };
         case 'Dragon King':
@@ -94,7 +94,12 @@ function imgAndColor(job) {
             return {
                 imgUrl:'https://imgur.com/gW2z1bi.png',
                 bg_color: 'rgb(204, 0, 102)',
-            };            
+            };
+        case 'Tyrant':
+            return {
+                imgUrl:'resources/tyrant.png',
+                bg_color: 'rgb(204, 153, 51)',
+            };              
         default:
             return {
                 imgUrl: 'https://www.romcodex.com/icons/skill/skill_10020001.png',
@@ -253,7 +258,9 @@ drake2.containers.push(document.getElementById('pt9-role'));
 drake2.containers.push(document.getElementById('pt10-role'));
 drake2.containers.push(document.getElementById('pt11-role'));
 drake2.containers.push(document.getElementById('pt12-role'));
-
+drake2.containers.push(document.getElementById('pt13-role'));
+drake2.containers.push(document.getElementById('pt14-role'));
+drake2.containers.push(document.getElementById('pt15-role'));
 
 function init() {
     let today = new Date().toISOString().slice(0, 10);
