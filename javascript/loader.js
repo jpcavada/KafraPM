@@ -65,7 +65,7 @@ function imgAndColor(job) {
                 imgUrl:'https://imgur.com/AGuLrqr.png',
                 bg_color:'purple',
             };
-        case 'Spirit Summoner':
+        case 'Spirit Whisperer':
             return {
                 imgUrl:'https://imgur.com/HuNtfO7.png',
                 bg_color: 'greenyellow',
