@@ -35,7 +35,7 @@ function imgAndColor(job) {
                 imgUrl:'https://imgur.com/vYmcqTj.png',
                 bg_color:'orange',
             };
-        case 'Luna Danceusse':
+        case 'Luna Danseuse':
             return {
                 imgUrl:'https://imgur.com/pAHv05g.png',
                 bg_color:'gold',
@@ -85,7 +85,7 @@ function imgAndColor(job) {
                 imgUrl:'https://imgur.com/cSxH85f.png',
                 bg_color:'purple',
             };
-        case 'Amaterasu-Yamata':
+        case 'Amaterasu':
             return {
                 imgUrl:'https://imgur.com/YmSirBr.png',
                 bg_color: 'rgb(255, 102, 255)',
@@ -156,12 +156,14 @@ function narmoLaLleva() {
 
     
     //var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1k1Fq3VNummYScVxnanThJSimk7YnFwaClh7Kg6cAagE/edit#gid=0';
-    var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1dI1YwANc2tdgW0JgyXECB55JnZ-4bAuhdLPXNlV5NUk/edit#gid=31056058';
+    //var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1dI1YwANc2tdgW0JgyXECB55JnZ-4bAuhdLPXNlV5NUk/edit#gid=31056058';
+    var mySpreadsheet =  'https://docs.google.com/spreadsheets/d/1r4H0DSMrP0zJrAPM17JJNC2-QcKw7eL4/edit#gid=1244446072';
     //var date = "'2020-02-07'";
     $('#as_cont').sheetrock({
         url: mySpreadsheet,
         //query: "select B,C,count(B),count(C) where D = 'Si' and date'" + string_woe_date +"' >= A and A >= date'"+string_start_date+ "' group by B,C order by C",
-        query: "select B,C,E where D = 'Si' and date'" + string_woe_date +"' >= A and A >= date'"+string_start_date+ "' order by C",
+        //query: "select B,C,E where D = 'Si' and date'" + string_woe_date +"' >= F and F >= date'"+string_start_date+ "' order by B",
+        query: "select A,D,H where G = 'Si' and date'" + string_woe_date +"' >= E and E >= date'"+string_start_date+ "' order by D",
         callback: (error, options = {}, response = {}) => {
             if (!!error) {
               console.log('error', error);
