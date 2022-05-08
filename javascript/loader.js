@@ -99,7 +99,12 @@ function imgAndColor(job) {
             return {
                 imgUrl:'resources/tyrant.png',
                 bg_color: 'rgb(204, 153, 51)',
-            };              
+            }; 
+        case 'Soul Binder':
+            return {
+                imgUrl:'https://romhandbook.com/assets/jobs/icon_18_5-9321425c769e8a914bc9bdb3f7e70446bdd4e64259a9782d8392a0c18d2f26fa.png',
+                bg_color: 'rgb(204, 153, 51)',
+            };  
         default:
             return {
                 imgUrl: 'https://www.romcodex.com/icons/skill/skill_10020001.png',
