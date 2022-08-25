@@ -104,10 +104,15 @@ function imgAndColor(job) {
             return {
                 imgUrl:'https://romhandbook.com/assets/jobs/icon_18_5-9321425c769e8a914bc9bdb3f7e70446bdd4e64259a9782d8392a0c18d2f26fa.png',
                 bg_color: 'purple',
-            };  
+            };
+        case 'Apocalypse':
+            return {
+                imgUrl:'',
+                bg_color: 'DarkKhaki',
+            }; 
         default:
             return {
-                imgUrl: 'https://www.romcodex.com/icons/skill/skill_10020001.png',
+                imgUrl: 'https://romhandbook.com/assets/jobs/icon_19_5-ea1e9a556bfe3620225b477c13b40e9b33fbf80050c35627d5e17f604f62c103.png',
                 bg_color: 'green'
             };
         };
