@@ -246,6 +246,11 @@ var drake = dragula({
   drake.containers.push(document.getElementById('pt13-integrantes'));
   drake.containers.push(document.getElementById('pt14-integrantes'));
   drake.containers.push(document.getElementById('pt15-integrantes'));
+  drake.containers.push(document.getElementById('pt16-integrantes'));
+  drake.containers.push(document.getElementById('pt17-integrantes'));
+  drake.containers.push(document.getElementById('pt18-integrantes'));
+  drake.containers.push(document.getElementById('pt19-integrantes'));
+  drake.containers.push(document.getElementById('pt20-integrantes'));
   
 var drake2 = dragula({
     copy: function (el, source) {
@@ -273,6 +278,11 @@ drake2.containers.push(document.getElementById('pt12-role'));
 drake2.containers.push(document.getElementById('pt13-role'));
 drake2.containers.push(document.getElementById('pt14-role'));
 drake2.containers.push(document.getElementById('pt15-role'));
+drake2.containers.push(document.getElementById('pt16-role'));
+drake2.containers.push(document.getElementById('pt17-role'));
+drake2.containers.push(document.getElementById('pt18-role'));
+drake2.containers.push(document.getElementById('pt19-role'));
+drake2.containers.push(document.getElementById('pt20-role'));
 
 function init() {
     let today = new Date().toISOString().slice(0, 10);
